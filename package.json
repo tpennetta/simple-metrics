@@ -6,7 +6,7 @@
   "main": "src/Metrics.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha ./test/Metrics.spec.js",
-    "jsdoc": "./node_modules/.bin/jsdoc src -r -c ./.jsdoc_conf"
+    "jsdox": "./node_modules/.bin/jsdox src/Metrics.js"
   },
   "keywords": [
     "nodejs",
