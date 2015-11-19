@@ -2,9 +2,11 @@
   "name": "simple-metrics",
   "version": "0.1.0",
   "description": "Pluggable performance measurement using microtime.",
-  "main": "index.js",
+  "repository": "https://github.com/tpennetta/simple-metrics.git",
+  "main": "src/Metrics.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/Metrics.spec.js"
+    "test": "./node_modules/.bin/mocha ./test/Metrics.spec.js",
+    "jsdoc": "./node_modules/.bin/jsdoc src -r -c ./.jsdoc_conf"
   },
   "keywords": [
     "nodejs",
@@ -14,13 +16,14 @@
     "node-metrics"
   ],
   "author": "Tom Pennetta <tpennetta@gmail.com> (https://github.com/tpennetta)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "microtime": "^2.0.0",
     "uuid": "^2.0.1"
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "jsdoc": "^3.4.0",
     "mocha": "^2.3.4"
   }
 }

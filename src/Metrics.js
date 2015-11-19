@@ -66,9 +66,9 @@ function start(guid, callback) {
 
 /**
  *
- * @param  {[type]}   guid     [description]
+ * @param  {string}   guid     [description]
  * @param  {Function} callback [description]
- * @return {[type]}            [description]
+ * @return {integer}            [description]
  */
 function stop(guid, callback) {
   var err = null;
@@ -105,12 +105,6 @@ function getAllMetrics(callback) {
   }
 }
 
-/**
- * [getElapsedTime description]
- * @param  {[type]}   guid     [description]
- * @param  {Function} callback [description]
- * @return {[type]}            [description]
- */
 function getElapsedTime(guid, callback) {
   var err = null;
 
@@ -137,10 +131,10 @@ function getMedian() {
 }
 
 /**
- * [clear description]
- * @param  {[type]}   guid     [description]
- * @param  {Function} callback [description]
- * @return {[type]}            [description]
+ * Removes one or all metrics in collection.
+ * @param  {string}   guid     optional guid of metric measurement to delete.
+ * @param  {Function} callback optional NodeJS callback function.
+ * @return {Boolean}           truth if success, false otherwise.
  */
 function clear(guid, callback) {
   var err = null;
@@ -175,9 +169,9 @@ function clear(guid, callback) {
 }
 
 /**
- * [isValidGuid description]
- * @param  {[type]}  guid [description]
- * @return {Boolean}      [description]
+ * Validate guid is not falsey and exists in the metrics collection.
+ * @param  {string}  guid guid to validate
+ * @return {Boolean}      true if valid and found, false otherwise
  */
 function isValidGuid(guid) {
   if (!guid) {
