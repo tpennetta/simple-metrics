@@ -17,6 +17,7 @@
 
 var uuid = require('uuid');
 var microtime = require('microtime');
+var _ = require('underscore');
 
 /**
  * object collection of metric measurements with property keys of guids and
@@ -123,7 +124,16 @@ function getElapsedTime(guid, callback) {
 }
 
 function getAverage() {
-
+  var sum = 0, numElems = 0;
+  for(var guid in metrics) {
+    if(!metrics.hasOwnProperty(guid)) {
+      continue;
+    }
+    sum += metrics[guid].elapsedTime;
+    numElems++;
+  }
+  sum = sum / numElems;
+  return sum;
 }
 
 function getMedian() {
@@ -172,6 +182,7 @@ function clear(guid, callback) {
  * Validate guid is not falsey and exists in the metrics collection.
  * @param  {string}  guid guid to validate
  * @return {Boolean}      true if valid and found, false otherwise
+ * @private
  */
 function isValidGuid(guid) {
   if (!guid) {
@@ -188,5 +199,6 @@ module.exports = {
   stop: stop,
   clear: clear,
   getElapsedTime: getElapsedTime,
-  getAllMetrics: getAllMetrics
+  getAllMetrics: getAllMetrics,
+  getAverage: getAverage
 };

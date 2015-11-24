@@ -31,3 +31,11 @@ console.log(myMetrics.getAllMetrics());
 myMetrics.clear();
 
 ```
+
+Features
+--------
+
+
+API
+---
+Detailed API information can be found by (obviously ;) ) reading the source or by checking the README in the src dir: https://github.com/tpennetta/simple-metrics/tree/master/src

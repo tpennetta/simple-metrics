@@ -29,6 +29,9 @@ describe('Metrics', function() {
     it('should get elapsed time by guid', function() {
       testMetrics.getElapsedTime(guid).should.be.a('number');
     });
+    it('should get average time', function() {
+      testMetrics.getAverage().should.be.a('number');
+    });
     it('should clear metric by guid', function() {
       testMetrics.clear(guid);
       (function() { testMetrics.getElapsedTime(guid); }).should.throw();
